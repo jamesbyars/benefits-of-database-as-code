@@ -2,11 +2,19 @@
 
 ### Getting the example up and running
 
-* Start the database
+1. Start the database
+    * `docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=dbac_example -d -p 3306:3306 mysql`
+        * I'm using docker here, as the example database is ephemeral, you can use any 
+        database and update the connection string in the `application.properties` file
+    
+    
+2. Install Dependencies (Build using Java 8 and Apache Maven 3.3.9)
 
-I'm using docker here, as the example database is ephemeral
-
-`docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=dbac_example -d -p 3306:3306 mysql`
+    * `mvn install`
+    
+    
+    
+3. 
 
 ### Tooling
 
