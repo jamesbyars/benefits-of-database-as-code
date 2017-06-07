@@ -7,14 +7,11 @@
         * I'm using docker here, as the example database is ephemeral, you can use any 
         database and update the connection string in the `application.properties` file
     
-    
 2. Install Dependencies (Build using Java 8 and Apache Maven 3.3.9)
 
     * `mvn install`
     
-    
-    
-3. 
+3. Run the `DatabaseAsCodeApplication` class 
 
 ### Tooling
 
