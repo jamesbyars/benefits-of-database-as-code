@@ -29,5 +29,3 @@ see the [full list of supported databases](http://www.liquibase.org/databases.ht
 * Database schema is checked into source control right alongside application source code
 * Auditable database changelog
   * Team members can review changes and see when changes were made and by whom
- 
-`
