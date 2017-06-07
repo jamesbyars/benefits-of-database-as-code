@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create-user-table" author="jbyars">
+
+        <createTable tableName="user">
+            <column name="id" type="char(36)" autoIncrement="false">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="user_first_name" type="text"/>
+            <column name="user_middle_name" type="text"/>
+            <column name="user_last_name" type="text"/>
+            <column name="username" type="varchar(255)">
+                <constraints unique="true" nullable="false"/>
+            </column>
+            <column name="email_address" type="varchar(255)">
+                <constraints unique="true" nullable="false"/>
+            </column>
+            <column name="password" type="text"/>
+            <column name="address_1" type="text"/>
+            <column name="address_2" type="text"/>
+            <column name="city" type="text"/>
+            <column name="zip" type="text"/>
+            <column name="zip+4_code" type="text"/>
+            <column name="state" type="text"/>
+            <column name="subscription_end_date" type="Date"/>
+            <column name="phone_number" type="text"/>
+            <column name="first_login" type="boolean" defaultValue="true"/>
+            <column name="role" type="text"/>
+            <column name="locked" type="boolean" defaultValue="false"/>
+            <column name="disabled" type="boolean" defaultValue="false"/>
+            <column name="created_at" type="timestamp"/>
+            <column name="updated_at" type="timestamp"/>
+        </createTable>
+
+        <createIndex tableName="user" indexName="ix_user_1">
+            <column name="id"/>
+            <column name="email_address"/>
+            <column name="username"/>
+        </createIndex>
+
+    </changeSet>
+
+
+</databaseChangeLog>
