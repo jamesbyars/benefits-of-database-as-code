@@ -1,7 +1,6 @@
 package com.ernesttech.example.databaseascode;
 
 import com.jolbox.bonecp.BoneCPDataSource;
-import liquibase.integration.spring.SpringLiquibase;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,7 +25,6 @@ public class DatabaseAsCodeApplication {
     }
 
 
-
     @Bean(destroyMethod = "close")
     public DataSource dataSource() {
         BoneCPDataSource dataSource = new BoneCPDataSource();
@@ -36,16 +34,6 @@ public class DatabaseAsCodeApplication {
         dataSource.setPassword(password);
 
         return dataSource;
-    }
-
-    @Bean
-    public SpringLiquibase liquibase() {
-        SpringLiquibase liquibase = new SpringLiquibase();
-
-        liquibase.setDataSource(dataSource());
-        liquibase.setChangeLog("classpath:/liquibase/db.changelog-master.xml");
-
-        return liquibase;
     }
 
 }
